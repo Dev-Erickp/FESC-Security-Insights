@@ -1,0 +1,255 @@
+{
+    "project": {
+        "id": "fesc-security-insights",
+        "name": "FESC Security Insights",
+        "summary": "Plataforma Laravel multiempresa para diagnósticos y seguimiento de seguridad de la información."
+    },
+    "truth_rule": "El índice decide QUÉ LEER, no QUÉ ES VERDAD. El código es la fuente de verdad.",
+    "context_budget": {
+        "prefer": [
+            "metadata",
+            "overview",
+            "query relevant|context"
+        ],
+        "overview_target_kb": 10,
+        "avoid_loading_all_artifacts": true
+    },
+    "how_to_query": {
+        "overview": "php artisan project:query overview",
+        "relevant": "php artisan project:query relevant --q=\"tarea\"",
+        "context": "php artisan project:query context {id}",
+        "stale": "php artisan project:query stale"
+    },
+    "domains": [
+        {
+            "id": "authentication",
+            "type": "domain",
+            "name": "Authentication",
+            "summary": "Autenticación Fortify: sesión, registro, contraseñas, 2FA y passkeys.",
+            "children": [
+                {
+                    "id": "user-identity",
+                    "type": "feature",
+                    "name": "User Identity",
+                    "summary": "Modelo User con verificación de correo, 2FA, roles y activity log."
+                },
+                {
+                    "id": "login",
+                    "type": "feature",
+                    "name": "Login",
+                    "summary": "Inicio de sesión Fortify y cierre de sesión Livewire."
+                },
+                {
+                    "id": "registration",
+                    "type": "feature",
+                    "name": "Registration",
+                    "summary": "Alta de usuarios vía Fortify CreateNewUser y reglas de perfil."
+                },
+                {
+                    "id": "password-recovery",
+                    "type": "feature",
+                    "name": "Password Recovery",
+                    "summary": "Recuperación y restablecimiento de contraseña Fortify."
+                },
+                {
+                    "id": "email-verification",
+                    "type": "feature",
+                    "name": "Email Verification",
+                    "summary": "Verificación de correo exigida en rutas privadas."
+                },
+                {
+                    "id": "two-factor-auth",
+                    "type": "feature",
+                    "name": "Two Factor Auth",
+                    "summary": "Desafío y configuración 2FA preparados por el starter kit."
+                },
+                {
+                    "id": "passkeys",
+                    "type": "feature",
+                    "name": "Passkeys",
+                    "summary": "Componentes y assets de autenticación con passkeys."
+                }
+            ]
+        },
+        {
+            "id": "account-settings",
+            "type": "domain",
+            "name": "Account Settings",
+            "summary": "Páginas Livewire de perfil, apariencia y seguridad de la cuenta.",
+            "children": [
+                {
+                    "id": "profile",
+                    "type": "feature",
+                    "name": "Profile",
+                    "summary": "Edición de perfil y eliminación de cuenta Livewire."
+                },
+                {
+                    "id": "appearance",
+                    "type": "feature",
+                    "name": "Appearance",
+                    "summary": "Preferencia de apariencia de la interfaz."
+                },
+                {
+                    "id": "security-settings",
+                    "type": "feature",
+                    "name": "Security Settings",
+                    "summary": "Cambio de contraseña y gestión 2FA en settings."
+                }
+            ]
+        },
+        {
+            "id": "tenancy",
+            "type": "domain",
+            "name": "Tenancy",
+            "summary": "Fundamentos multiempresa shared-database y contexto de organización activa.",
+            "children": [
+                {
+                    "id": "organization-context",
+                    "type": "feature",
+                    "name": "Organization Context",
+                    "summary": "Contexto de organización activa en sesión sincronizado con Spatie teams."
+                }
+            ]
+        },
+        {
+            "id": "authorization",
+            "type": "domain",
+            "name": "Authorization",
+            "summary": "Roles y permisos Spatie con team key organization_id.",
+            "children": [
+                {
+                    "id": "roles-permissions",
+                    "type": "feature",
+                    "name": "Roles and Permissions",
+                    "summary": "Configuración Spatie Permission con organization_id como team key para roles globales y por organización."
+                }
+            ]
+        },
+        {
+            "id": "audit",
+            "type": "domain",
+            "name": "Audit",
+            "summary": "Trazabilidad base con Spatie Activitylog.",
+            "children": [
+                {
+                    "id": "activity-logging",
+                    "type": "feature",
+                    "name": "Activity Logging",
+                    "summary": "Registro de cambios relevantes con Spatie Activitylog v5."
+                }
+            ]
+        },
+        {
+            "id": "ui-shell",
+            "type": "domain",
+            "name": "UI Shell",
+            "summary": "Layouts Blade/Flux, branding y shell administrativo.",
+            "children": [
+                {
+                    "id": "app-layout",
+                    "type": "feature",
+                    "name": "App Layout",
+                    "summary": "Shell autenticado con sidebar, header móvil y menú de usuario."
+                },
+                {
+                    "id": "auth-layout",
+                    "type": "feature",
+                    "name": "Auth Layout",
+                    "summary": "Layouts de autenticación con identidad visual FESC."
+                },
+                {
+                    "id": "dashboard-home",
+                    "type": "feature",
+                    "name": "Dashboard Home",
+                    "summary": "Página de inicio autenticada y welcome pública."
+                },
+                {
+                    "id": "ui-misc-components",
+                    "type": "feature",
+                    "name": "UI Misc Components",
+                    "summary": "Iconos Flux, partials y componentes auxiliares de la UI."
+                }
+            ]
+        },
+        {
+            "id": "infrastructure",
+            "type": "domain",
+            "name": "Infrastructure",
+            "summary": "Bootstrap Laravel, Docker, providers, assets y configuración base.",
+            "children": [
+                {
+                    "id": "bootstrap-routing",
+                    "type": "feature",
+                    "name": "Bootstrap and Routing",
+                    "summary": "Arranque Laravel, middleware aliases y providers de aplicación."
+                },
+                {
+                    "id": "docker-runtime",
+                    "type": "feature",
+                    "name": "Docker Runtime",
+                    "summary": "Compose de app PHP 8.4 y MariaDB 11.6 con volúmenes persistentes."
+                },
+                {
+                    "id": "frontend-assets",
+                    "type": "feature",
+                    "name": "Frontend Assets",
+                    "summary": "Vite, Tailwind, CSS de marca y JS de la aplicación."
+                },
+                {
+                    "id": "database-foundation",
+                    "type": "feature",
+                    "name": "Database Foundation",
+                    "summary": "Migraciones base Laravel (users, cache, jobs) y seeder."
+                },
+                {
+                    "id": "app-config",
+                    "type": "configuration",
+                    "name": "Application Config",
+                    "summary": "Archivos de configuración Laravel no cubiertos por features específicas."
+                }
+            ]
+        },
+        {
+            "id": "documentation",
+            "type": "domain",
+            "name": "Documentation",
+            "summary": "Documentación de arquitectura, multiempresa, dependencias y guías.",
+            "children": [
+                {
+                    "id": "architecture-docs",
+                    "type": "documentation",
+                    "name": "Architecture Docs",
+                    "summary": "Documentos de arquitectura, multiempresa, dependencias y guías."
+                }
+            ]
+        },
+        {
+            "id": "testing",
+            "type": "domain",
+            "name": "Testing",
+            "summary": "Suite Pest de autenticación, settings, dashboard e índice del proyecto.",
+            "children": [
+                {
+                    "id": "test-suite",
+                    "type": "test",
+                    "name": "Test Suite",
+                    "summary": "Pruebas Pest unitarias y de feature del repositorio."
+                }
+            ]
+        },
+        {
+            "id": "project-intelligence",
+            "type": "domain",
+            "name": "Project Intelligence",
+            "summary": "Índice conceptual local para orientar lectura de agentes.",
+            "children": [
+                {
+                    "id": "project-index",
+                    "type": "feature",
+                    "name": "Project Index",
+                    "summary": "Generación y consulta del índice conceptual en .project/."
+                }
+            ]
+        }
+    ]
+}

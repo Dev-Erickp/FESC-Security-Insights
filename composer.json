@@ -70,6 +70,9 @@
             "Composer\\Config::disableProcessTimeout",
             "@test"
         ],
+        "index": [
+            "@php artisan project:index --if-stale --no-interaction"
+        ],
         "types:check": [
             "phpstan analyse"
         ],
@@ -81,7 +84,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan project:index --if-stale --install-hooks --no-interaction"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

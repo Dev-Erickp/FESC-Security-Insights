@@ -88,12 +88,26 @@ php artisan test
 npm run build
 ```
 
+## Project Intelligence Index
+
+Índice conceptual local en [`.project/`](.project/) para orientar qué leer (no qué es verdad).
+
+```bash
+php artisan project:query relevant --q="organización activa"
+php artisan project:query context organization-context
+php artisan project:index --check
+composer index
+```
+
+Ver [`.project/README.md`](.project/README.md). Catálogo mantenido: `app/Support/ProjectIndex/Catalog.php`.
+
 ## Documentación
 
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 - [`docs/DEPENDENCIES.md`](docs/DEPENDENCIES.md)
 - [`docs/MULTITENANCY.md`](docs/MULTITENANCY.md)
 - [`docs/DEVELOPMENT_GUIDELINES.md`](docs/DEVELOPMENT_GUIDELINES.md)
+- [`.project/README.md`](.project/README.md)
 
 ## Seguridad base incluida
 

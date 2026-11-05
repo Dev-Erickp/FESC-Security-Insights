@@ -1,0 +1,36 @@
+---
+description: Project Intelligence Index — always-on reading workflow for this repo
+alwaysApply: true
+---
+
+# Project Intelligence Index
+
+Truth rule: the index decides **what to read**, not **what is true**. Code wins.
+
+## Read flow
+
+1. Prefer `php artisan project:query …` over opening raw `.project/*.json`.
+2. Levels: metadata → overview → relevant/context → filemap entrypoints → code.
+3. Simple tasks: 2–5 nodes max. Complex: expand with `context` / `dependencies`.
+4. Precision > token savings. If unsure for correctness, read the code.
+
+## Mandatory agent actions
+
+| Condition | Action |
+| --- | --- |
+| New real module/feature absent from the tree | Map **existing** paths only in `Catalog.php`, then `project:index --full` |
+| New `app/` file missing from `query path` / filemap | Add it to the real node; `--full` |
+| Large move/rename | Fix broken catalog paths; `--full` |
+| Catalog edited in this task | `--full` before closing (query incremental is not enough) |
+| `--check` → `catalog-changed` or incoherent graph | Fix catalog if needed; `--full` |
+
+Do **not** `--full` for a local edit already mapped — `project:query` auto-refreshes stale indexes.
+
+## Useful commands
+
+```bash
+php artisan project:query relevant --q="organización activa"
+php artisan project:query context organization-context
+php artisan project:index --check
+php artisan project:index --full
+```

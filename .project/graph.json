@@ -1,0 +1,445 @@
+{
+    "edges": [
+        {
+            "from": "authentication",
+            "to": "ui-shell",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "account-settings",
+            "to": "authentication",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "account-settings",
+            "to": "ui-shell",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "tenancy",
+            "to": "authorization",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "user-identity",
+            "to": "roles-permissions",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "user-identity",
+            "to": "activity-logging",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "login",
+            "to": "user-identity",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "login",
+            "to": "auth-layout",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "registration",
+            "to": "user-identity",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "password-recovery",
+            "to": "user-identity",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "email-verification",
+            "to": "user-identity",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "two-factor-auth",
+            "to": "user-identity",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "passkeys",
+            "to": "login",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "profile",
+            "to": "user-identity",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "appearance",
+            "to": "ui-shell",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "security-settings",
+            "to": "password-recovery",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "security-settings",
+            "to": "two-factor-auth",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "organization-context",
+            "to": "roles-permissions",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "dashboard-home",
+            "to": "app-layout",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "dashboard-home",
+            "to": "authentication",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "bootstrap-routing",
+            "to": "organization-context",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "ui-misc-components",
+            "to": "app-layout",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
+            "from": "registration",
+            "to": "password-recovery",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "registration",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 2
+        },
+        {
+            "from": "password-recovery",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 3
+        },
+        {
+            "from": "project-index",
+            "to": "project-index-engine",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 12
+        },
+        {
+            "from": "bootstrap-routing",
+            "to": "organization-context",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 2
+        },
+        {
+            "from": "bootstrap-routing",
+            "to": "registration",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "bootstrap-routing",
+            "to": "password-recovery",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "database-foundation",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "profile",
+            "to": "password-recovery",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "profile",
+            "to": "login",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "profile",
+            "to": "registration",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "security-settings",
+            "to": "password-recovery",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "login",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "email-verification",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "two-factor-auth",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "dashboard-home",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "profile",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "security-settings",
+            "to": "user-identity",
+            "type": "uses",
+            "confidence": 0.85,
+            "source": "import-analysis",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "login",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "email-verification",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "password-recovery",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "registration",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "two-factor-auth",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "dashboard-home",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "project-index",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "profile",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        },
+        {
+            "from": "test-suite",
+            "to": "security-settings",
+            "type": "tests",
+            "confidence": 0.9,
+            "source": "path-map",
+            "inferred": true,
+            "weight": 1
+        }
+    ]
+}

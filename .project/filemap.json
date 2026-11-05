@@ -1,0 +1,621 @@
+{
+    "account-settings": {
+        "entrypoints": [
+            "routes/settings.php",
+            "resources/views/pages/settings/layout.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/pages/settings/layout.blade.php",
+            "resources/views/pages/settings/two-factor/⚡recovery-codes.blade.php",
+            "resources/views/pages/settings/⚡appearance.blade.php",
+            "resources/views/pages/settings/⚡delete-user-form.blade.php",
+            "resources/views/pages/settings/⚡delete-user-modal.blade.php",
+            "resources/views/pages/settings/⚡profile.blade.php",
+            "resources/views/pages/settings/⚡security.blade.php",
+            "resources/views/pages/settings/⚡two-factor-setup-modal.blade.php",
+            "routes/settings.php"
+        ],
+        "tests": []
+    },
+    "activity-logging": {
+        "entrypoints": [
+            "config/activitylog.php",
+            "app/Models/User.php"
+        ],
+        "dirs": [],
+        "files": [
+            "config/activitylog.php",
+            "database/migrations/2026_11_05_152608_create_activity_log_table.php"
+        ],
+        "tests": []
+    },
+    "app-config": {
+        "entrypoints": [
+            "config/app.php",
+            ".env.example"
+        ],
+        "dirs": [],
+        "files": [
+            "config/app.php",
+            "config/auth.php",
+            "config/cache.php",
+            "config/database.php",
+            "config/filesystems.php",
+            "config/logging.php",
+            "config/mail.php",
+            "config/queue.php",
+            "config/services.php",
+            "config/session.php",
+            "pint.json"
+        ],
+        "tests": []
+    },
+    "app-layout": {
+        "entrypoints": [
+            "resources/views/layouts/app/sidebar.blade.php",
+            "resources/views/layouts/app.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/components/app-logo-icon.blade.php",
+            "resources/views/components/app-logo.blade.php",
+            "resources/views/components/desktop-user-menu.blade.php",
+            "resources/views/layouts/app.blade.php",
+            "resources/views/layouts/app/header.blade.php",
+            "resources/views/layouts/app/sidebar.blade.php",
+            "resources/views/partials/head.blade.php"
+        ],
+        "tests": []
+    },
+    "appearance": {
+        "entrypoints": [
+            "resources/views/pages/settings/⚡appearance.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/pages/settings/⚡appearance.blade.php"
+        ],
+        "tests": []
+    },
+    "architecture-docs": {
+        "entrypoints": [
+            "docs/ARCHITECTURE.md",
+            "docs/MULTITENANCY.md",
+            "docs/DEVELOPMENT_GUIDELINES.md"
+        ],
+        "dirs": [],
+        "files": [
+            "README.md",
+            "app/Modules/README.md",
+            "docs/ARCHITECTURE.md",
+            "docs/DEPENDENCIES.md",
+            "docs/DEVELOPMENT_GUIDELINES.md",
+            "docs/MULTITENANCY.md"
+        ],
+        "tests": []
+    },
+    "audit": {
+        "entrypoints": [
+            "config/activitylog.php",
+            "app/Models/User.php"
+        ],
+        "dirs": [],
+        "files": [
+            "config/activitylog.php",
+            "database/migrations/2026_11_05_152608_create_activity_log_table.php"
+        ],
+        "tests": []
+    },
+    "auth-layout": {
+        "entrypoints": [
+            "resources/views/layouts/auth.blade.php",
+            "resources/views/layouts/auth/split.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/components/auth-header.blade.php",
+            "resources/views/components/auth-session-status.blade.php",
+            "resources/views/layouts/auth.blade.php",
+            "resources/views/layouts/auth/card.blade.php",
+            "resources/views/layouts/auth/simple.blade.php",
+            "resources/views/layouts/auth/split.blade.php"
+        ],
+        "tests": []
+    },
+    "authentication": {
+        "entrypoints": [
+            "config/fortify.php",
+            "app/Providers/FortifyServiceProvider.php",
+            "routes/web.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Actions/Fortify/CreateNewUser.php",
+            "app/Actions/Fortify/ResetUserPassword.php",
+            "app/Providers/FortifyServiceProvider.php",
+            "config/fortify.php",
+            "resources/views/pages/auth/confirm-password.blade.php",
+            "resources/views/pages/auth/forgot-password.blade.php",
+            "resources/views/pages/auth/login.blade.php",
+            "resources/views/pages/auth/register.blade.php",
+            "resources/views/pages/auth/reset-password.blade.php",
+            "resources/views/pages/auth/two-factor-challenge.blade.php",
+            "resources/views/pages/auth/verify-email.blade.php"
+        ],
+        "tests": []
+    },
+    "authorization": {
+        "entrypoints": [
+            "config/permission.php",
+            "app/Models/User.php"
+        ],
+        "dirs": [],
+        "files": [
+            "config/permission.php",
+            "database/migrations/2026_11_05_152607_create_permission_tables.php"
+        ],
+        "tests": []
+    },
+    "bootstrap-routing": {
+        "entrypoints": [
+            "bootstrap/app.php",
+            "app/Providers/AppServiceProvider.php",
+            "routes/web.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Http/Controllers/Controller.php",
+            "app/Providers/AppServiceProvider.php",
+            "app/Providers/FortifyServiceProvider.php",
+            "bootstrap/app.php",
+            "bootstrap/providers.php",
+            "routes/console.php",
+            "routes/settings.php",
+            "routes/web.php"
+        ],
+        "tests": []
+    },
+    "dashboard-home": {
+        "entrypoints": [
+            "resources/views/dashboard.blade.php",
+            "routes/web.php",
+            "tests/Feature/DashboardTest.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/dashboard.blade.php",
+            "resources/views/welcome.blade.php",
+            "routes/web.php"
+        ],
+        "tests": [
+            "tests/Feature/DashboardTest.php",
+            "tests/Feature/ExampleTest.php"
+        ]
+    },
+    "database-foundation": {
+        "entrypoints": [
+            "config/database.php",
+            "database/seeders/DatabaseSeeder.php"
+        ],
+        "dirs": [],
+        "files": [
+            "config/database.php",
+            "database/migrations/0001_01_01_000000_create_users_table.php",
+            "database/migrations/0001_01_01_000001_create_cache_table.php",
+            "database/migrations/0001_01_01_000002_create_jobs_table.php",
+            "database/seeders/DatabaseSeeder.php"
+        ],
+        "tests": []
+    },
+    "docker-runtime": {
+        "entrypoints": [
+            "docker-compose.yml",
+            "docker/php/Dockerfile"
+        ],
+        "dirs": [],
+        "files": [
+            "docker-compose.yml",
+            "docker/php/Dockerfile"
+        ],
+        "tests": []
+    },
+    "documentation": {
+        "entrypoints": [
+            "docs/ARCHITECTURE.md",
+            "docs/MULTITENANCY.md",
+            "README.md"
+        ],
+        "dirs": [],
+        "files": [
+            "README.md",
+            "app/Modules/README.md",
+            "docs/ARCHITECTURE.md",
+            "docs/DEPENDENCIES.md",
+            "docs/DEVELOPMENT_GUIDELINES.md",
+            "docs/MULTITENANCY.md"
+        ],
+        "tests": []
+    },
+    "email-verification": {
+        "entrypoints": [
+            "resources/views/pages/auth/verify-email.blade.php",
+            "routes/web.php",
+            "tests/Feature/Auth/EmailVerificationTest.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/pages/auth/verify-email.blade.php",
+            "routes/web.php"
+        ],
+        "tests": [
+            "tests/Feature/Auth/EmailVerificationTest.php"
+        ]
+    },
+    "fesc-security-insights": {
+        "entrypoints": [
+            "README.md",
+            "composer.json",
+            "bootstrap/app.php"
+        ],
+        "dirs": [],
+        "files": [
+            "README.md",
+            "artisan",
+            "composer.json"
+        ],
+        "tests": []
+    },
+    "frontend-assets": {
+        "entrypoints": [
+            "vite.config.js",
+            "resources/css/app.css",
+            "package.json"
+        ],
+        "dirs": [],
+        "files": [
+            "lang/es.json",
+            "package.json",
+            "resources/css/app.css",
+            "resources/js/app.js",
+            "vite.config.js"
+        ],
+        "tests": []
+    },
+    "infrastructure": {
+        "entrypoints": [
+            "bootstrap/app.php",
+            "docker-compose.yml",
+            "app/Providers/AppServiceProvider.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Providers/AppServiceProvider.php",
+            "app/Providers/FortifyServiceProvider.php",
+            "bootstrap/app.php",
+            "bootstrap/providers.php",
+            "docker-compose.yml",
+            "docker/php/Dockerfile",
+            "vite.config.js"
+        ],
+        "tests": []
+    },
+    "login": {
+        "entrypoints": [
+            "resources/views/pages/auth/login.blade.php",
+            "app/Livewire/Actions/Logout.php",
+            "tests/Feature/Auth/AuthenticationTest.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Livewire/Actions/Logout.php",
+            "resources/views/pages/auth/login.blade.php"
+        ],
+        "tests": [
+            "tests/Feature/Auth/AuthenticationTest.php"
+        ]
+    },
+    "organization-context": {
+        "entrypoints": [
+            "app/Support/Tenancy/OrganizationContext.php",
+            "app/Http/Middleware/SetOrganizationContext.php",
+            "bootstrap/app.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Http/Middleware/SetOrganizationContext.php",
+            "app/Support/Tenancy/OrganizationContext.php",
+            "docs/MULTITENANCY.md"
+        ],
+        "tests": []
+    },
+    "passkeys": {
+        "entrypoints": [
+            "resources/views/components/passkey-verify.blade.php",
+            "resources/js/passkeys.js"
+        ],
+        "dirs": [],
+        "files": [
+            "database/migrations/2024_01_01_000000_create_passkeys_table.php",
+            "resources/js/passkeys.js",
+            "resources/views/components/passkey-registration.blade.php",
+            "resources/views/components/passkey-verify.blade.php"
+        ],
+        "tests": []
+    },
+    "password-recovery": {
+        "entrypoints": [
+            "app/Actions/Fortify/ResetUserPassword.php",
+            "resources/views/pages/auth/forgot-password.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Actions/Fortify/ResetUserPassword.php",
+            "app/Concerns/PasswordValidationRules.php",
+            "resources/views/pages/auth/confirm-password.blade.php",
+            "resources/views/pages/auth/forgot-password.blade.php",
+            "resources/views/pages/auth/reset-password.blade.php"
+        ],
+        "tests": [
+            "tests/Feature/Auth/PasswordConfirmationTest.php",
+            "tests/Feature/Auth/PasswordResetTest.php"
+        ]
+    },
+    "profile": {
+        "entrypoints": [
+            "resources/views/pages/settings/⚡profile.blade.php",
+            "tests/Feature/Settings/ProfileUpdateTest.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/pages/settings/⚡delete-user-form.blade.php",
+            "resources/views/pages/settings/⚡delete-user-modal.blade.php",
+            "resources/views/pages/settings/⚡profile.blade.php"
+        ],
+        "tests": [
+            "tests/Feature/Settings/ProfileUpdateTest.php"
+        ]
+    },
+    "project-index": {
+        "entrypoints": [
+            "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/Indexer.php",
+            "app/Support/ProjectIndex/IndexQuery.php",
+            "app/Console/Commands/ProjectQueryCommand.php"
+        ],
+        "dirs": [],
+        "files": [
+            ".cursor/rules/project-intelligence.mdc",
+            "app/Console/Commands/ProjectIndexCommand.php",
+            "app/Console/Commands/ProjectQueryCommand.php",
+            "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/GitHookInstaller.php",
+            "app/Support/ProjectIndex/IndexQuery.php",
+            "app/Support/ProjectIndex/IndexStore.php",
+            "app/Support/ProjectIndex/Indexer.php",
+            "app/Support/ProjectIndex/PhpImportScanner.php"
+        ],
+        "tests": [
+            "tests/Feature/ProjectIndex/ProjectIndexCommandsTest.php",
+            "tests/Unit/ProjectIndex/IndexerTest.php",
+            "tests/Unit/ProjectIndex/PhpImportScannerTest.php"
+        ]
+    },
+    "project-index-engine": {
+        "entrypoints": [
+            "app/Support/ProjectIndex/Indexer.php",
+            "app/Support/ProjectIndex/IndexQuery.php",
+            "app/Support/ProjectIndex/PhpImportScanner.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/GitHookInstaller.php",
+            "app/Support/ProjectIndex/IndexQuery.php",
+            "app/Support/ProjectIndex/IndexStore.php",
+            "app/Support/ProjectIndex/Indexer.php",
+            "app/Support/ProjectIndex/PhpImportScanner.php"
+        ],
+        "tests": []
+    },
+    "project-intelligence": {
+        "entrypoints": [
+            "app/Support/ProjectIndex/Catalog.php",
+            ".project/README.md"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Console/Commands/ProjectIndexCommand.php",
+            "app/Console/Commands/ProjectQueryCommand.php",
+            "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/GitHookInstaller.php",
+            "app/Support/ProjectIndex/IndexQuery.php",
+            "app/Support/ProjectIndex/IndexStore.php",
+            "app/Support/ProjectIndex/Indexer.php",
+            "app/Support/ProjectIndex/PhpImportScanner.php"
+        ],
+        "tests": []
+    },
+    "registration": {
+        "entrypoints": [
+            "app/Actions/Fortify/CreateNewUser.php",
+            "resources/views/pages/auth/register.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Actions/Fortify/CreateNewUser.php",
+            "app/Concerns/ProfileValidationRules.php",
+            "resources/views/pages/auth/register.blade.php"
+        ],
+        "tests": [
+            "tests/Feature/Auth/RegistrationTest.php"
+        ]
+    },
+    "roles-permissions": {
+        "entrypoints": [
+            "config/permission.php",
+            "app/Models/User.php"
+        ],
+        "dirs": [],
+        "files": [
+            "config/permission.php",
+            "database/migrations/2026_11_05_152607_create_permission_tables.php"
+        ],
+        "tests": []
+    },
+    "security-settings": {
+        "entrypoints": [
+            "resources/views/pages/settings/⚡security.blade.php",
+            "tests/Feature/Settings/SecurityTest.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/pages/settings/⚡security.blade.php"
+        ],
+        "tests": [
+            "tests/Feature/Settings/SecurityTest.php"
+        ]
+    },
+    "tenancy": {
+        "entrypoints": [
+            "app/Support/Tenancy/OrganizationContext.php",
+            "docs/MULTITENANCY.md"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Http/Middleware/SetOrganizationContext.php",
+            "app/Support/Tenancy/OrganizationContext.php",
+            "docs/MULTITENANCY.md"
+        ],
+        "tests": []
+    },
+    "test-suite": {
+        "entrypoints": [
+            "tests/Pest.php",
+            "tests/TestCase.php"
+        ],
+        "dirs": [],
+        "files": [
+            "phpunit.xml"
+        ],
+        "tests": [
+            "tests/Feature/Auth/AuthenticationTest.php",
+            "tests/Feature/Auth/EmailVerificationTest.php",
+            "tests/Feature/Auth/PasswordConfirmationTest.php",
+            "tests/Feature/Auth/PasswordResetTest.php",
+            "tests/Feature/Auth/RegistrationTest.php",
+            "tests/Feature/Auth/TwoFactorChallengeTest.php",
+            "tests/Feature/DashboardTest.php",
+            "tests/Feature/ExampleTest.php",
+            "tests/Feature/ProjectIndex/ProjectIndexCommandsTest.php",
+            "tests/Feature/Settings/ProfileUpdateTest.php",
+            "tests/Feature/Settings/SecurityTest.php",
+            "tests/Pest.php",
+            "tests/TestCase.php",
+            "tests/Unit/ExampleTest.php",
+            "tests/Unit/ProjectIndex/IndexerTest.php",
+            "tests/Unit/ProjectIndex/PhpImportScannerTest.php"
+        ]
+    },
+    "testing": {
+        "entrypoints": [
+            "tests/Pest.php",
+            "phpunit.xml"
+        ],
+        "dirs": [],
+        "files": [
+            "phpunit.xml"
+        ],
+        "tests": [
+            "tests/Feature/Auth/AuthenticationTest.php",
+            "tests/Feature/Auth/EmailVerificationTest.php",
+            "tests/Feature/Auth/PasswordConfirmationTest.php",
+            "tests/Feature/Auth/PasswordResetTest.php",
+            "tests/Feature/Auth/RegistrationTest.php",
+            "tests/Feature/Auth/TwoFactorChallengeTest.php",
+            "tests/Feature/DashboardTest.php",
+            "tests/Feature/ExampleTest.php",
+            "tests/Feature/ProjectIndex/ProjectIndexCommandsTest.php",
+            "tests/Feature/Settings/ProfileUpdateTest.php",
+            "tests/Feature/Settings/SecurityTest.php",
+            "tests/Pest.php",
+            "tests/TestCase.php",
+            "tests/Unit/ExampleTest.php",
+            "tests/Unit/ProjectIndex/IndexerTest.php",
+            "tests/Unit/ProjectIndex/PhpImportScannerTest.php"
+        ]
+    },
+    "two-factor-auth": {
+        "entrypoints": [
+            "resources/views/pages/auth/two-factor-challenge.blade.php",
+            "tests/Feature/Auth/TwoFactorChallengeTest.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/pages/auth/two-factor-challenge.blade.php",
+            "resources/views/pages/settings/two-factor/⚡recovery-codes.blade.php",
+            "resources/views/pages/settings/⚡two-factor-setup-modal.blade.php"
+        ],
+        "tests": [
+            "tests/Feature/Auth/TwoFactorChallengeTest.php"
+        ]
+    },
+    "ui-misc-components": {
+        "entrypoints": [
+            "resources/views/pages/settings/layout.blade.php",
+            "resources/views/partials/settings-heading.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/views/components/placeholder-pattern.blade.php",
+            "resources/views/flux/icon/book-open-text.blade.php",
+            "resources/views/flux/icon/chevrons-up-down.blade.php",
+            "resources/views/flux/icon/folder-git-2.blade.php",
+            "resources/views/flux/icon/layout-grid.blade.php",
+            "resources/views/flux/navlist/group.blade.php",
+            "resources/views/pages/settings/layout.blade.php",
+            "resources/views/partials/settings-heading.blade.php"
+        ],
+        "tests": []
+    },
+    "ui-shell": {
+        "entrypoints": [
+            "resources/views/layouts/app/sidebar.blade.php",
+            "resources/views/layouts/auth/split.blade.php"
+        ],
+        "dirs": [],
+        "files": [
+            "resources/css/app.css",
+            "resources/views/components/app-logo-icon.blade.php",
+            "resources/views/components/app-logo.blade.php",
+            "resources/views/components/auth-header.blade.php",
+            "resources/views/components/auth-session-status.blade.php",
+            "resources/views/components/desktop-user-menu.blade.php",
+            "resources/views/components/passkey-registration.blade.php",
+            "resources/views/components/passkey-verify.blade.php",
+            "resources/views/components/placeholder-pattern.blade.php",
+            "resources/views/layouts/app.blade.php",
+            "resources/views/layouts/app/header.blade.php",
+            "resources/views/layouts/app/sidebar.blade.php",
+            "resources/views/layouts/auth.blade.php",
+            "resources/views/layouts/auth/card.blade.php",
+            "resources/views/layouts/auth/simple.blade.php",
+            "resources/views/layouts/auth/split.blade.php"
+        ],
+        "tests": []
+    },
+    "user-identity": {
+        "entrypoints": [
+            "app/Models/User.php",
+            "database/factories/UserFactory.php"
+        ],
+        "dirs": [],
+        "files": [
+            "app/Models/User.php",
+            "database/factories/UserFactory.php",
+            "database/migrations/0001_01_01_000000_create_users_table.php",
+            "database/migrations/2025_08_14_170933_add_two_factor_columns_to_users_table.php"
+        ],
+        "tests": []
+    }
+}

@@ -1,0 +1,1034 @@
+{
+    "nodes": [
+        {
+            "id": "fesc-security-insights",
+            "type": "project",
+            "name": "FESC Security Insights",
+            "summary": "Raíz conceptual del monolito modular Laravel 13 + Livewire.",
+            "status": "implemented",
+            "parent": null,
+            "children": [
+                "account-settings",
+                "audit",
+                "authentication",
+                "authorization",
+                "documentation",
+                "infrastructure",
+                "project-intelligence",
+                "tenancy",
+                "testing",
+                "ui-shell"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "README.md",
+                "composer.json",
+                "bootstrap/app.php"
+            ],
+            "aliases": [
+                "fesc",
+                "security insights",
+                "plataforma"
+            ]
+        },
+        {
+            "id": "authentication",
+            "type": "domain",
+            "name": "Authentication",
+            "summary": "Autenticación Fortify: sesión, registro, contraseñas, 2FA y passkeys.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "email-verification",
+                "login",
+                "passkeys",
+                "password-recovery",
+                "registration",
+                "two-factor-auth",
+                "user-identity"
+            ],
+            "depends_on": [
+                "ui-shell"
+            ],
+            "entrypoints": [
+                "config/fortify.php",
+                "app/Providers/FortifyServiceProvider.php",
+                "routes/web.php"
+            ],
+            "aliases": [
+                "auth",
+                "fortify",
+                "login",
+                "autenticación"
+            ]
+        },
+        {
+            "id": "account-settings",
+            "type": "domain",
+            "name": "Account Settings",
+            "summary": "Páginas Livewire de perfil, apariencia y seguridad de la cuenta.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "appearance",
+                "profile",
+                "security-settings"
+            ],
+            "depends_on": [
+                "authentication",
+                "ui-shell"
+            ],
+            "entrypoints": [
+                "routes/settings.php",
+                "resources/views/pages/settings/layout.blade.php"
+            ],
+            "aliases": [
+                "settings",
+                "perfil",
+                "configuración"
+            ]
+        },
+        {
+            "id": "tenancy",
+            "type": "domain",
+            "name": "Tenancy",
+            "summary": "Fundamentos multiempresa shared-database y contexto de organización activa.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "organization-context"
+            ],
+            "depends_on": [
+                "authorization"
+            ],
+            "entrypoints": [
+                "app/Support/Tenancy/OrganizationContext.php",
+                "docs/MULTITENANCY.md"
+            ],
+            "aliases": [
+                "multiempresa",
+                "organización",
+                "organizacion",
+                "tenant",
+                "organization",
+                "organización activa"
+            ]
+        },
+        {
+            "id": "authorization",
+            "type": "domain",
+            "name": "Authorization",
+            "summary": "Roles y permisos Spatie con team key organization_id.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "roles-permissions"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "config/permission.php",
+                "app/Models/User.php"
+            ],
+            "aliases": [
+                "roles",
+                "permisos",
+                "spatie permission",
+                "gates",
+                "organización",
+                "organization_id"
+            ]
+        },
+        {
+            "id": "audit",
+            "type": "domain",
+            "name": "Audit",
+            "summary": "Trazabilidad base con Spatie Activitylog.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "activity-logging"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "config/activitylog.php",
+                "app/Models/User.php"
+            ],
+            "aliases": [
+                "activitylog",
+                "auditoría",
+                "trazabilidad"
+            ]
+        },
+        {
+            "id": "ui-shell",
+            "type": "domain",
+            "name": "UI Shell",
+            "summary": "Layouts Blade/Flux, branding y shell administrativo.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "app-layout",
+                "auth-layout",
+                "dashboard-home",
+                "ui-misc-components"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "resources/views/layouts/app/sidebar.blade.php",
+                "resources/views/layouts/auth/split.blade.php"
+            ],
+            "aliases": [
+                "layout",
+                "blade",
+                "flux",
+                "navegación",
+                "sidebar"
+            ]
+        },
+        {
+            "id": "infrastructure",
+            "type": "domain",
+            "name": "Infrastructure",
+            "summary": "Bootstrap Laravel, Docker, providers, assets y configuración base.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "app-config",
+                "bootstrap-routing",
+                "database-foundation",
+                "docker-runtime",
+                "frontend-assets"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "bootstrap/app.php",
+                "docker-compose.yml",
+                "app/Providers/AppServiceProvider.php"
+            ],
+            "aliases": [
+                "docker",
+                "vite",
+                "bootstrap",
+                "providers"
+            ]
+        },
+        {
+            "id": "documentation",
+            "type": "domain",
+            "name": "Documentation",
+            "summary": "Documentación de arquitectura, multiempresa, dependencias y guías.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "architecture-docs"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "docs/ARCHITECTURE.md",
+                "docs/MULTITENANCY.md",
+                "README.md"
+            ],
+            "aliases": [
+                "docs",
+                "arquitectura",
+                "readme"
+            ]
+        },
+        {
+            "id": "testing",
+            "type": "domain",
+            "name": "Testing",
+            "summary": "Suite Pest de autenticación, settings, dashboard e índice del proyecto.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "test-suite"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "tests/Pest.php",
+                "phpunit.xml"
+            ],
+            "aliases": [
+                "pest",
+                "tests",
+                "phpunit"
+            ]
+        },
+        {
+            "id": "project-intelligence",
+            "type": "domain",
+            "name": "Project Intelligence",
+            "summary": "Índice conceptual local para orientar lectura de agentes.",
+            "status": "implemented",
+            "parent": "fesc-security-insights",
+            "children": [
+                "project-index"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "app/Support/ProjectIndex/Catalog.php",
+                ".project/README.md"
+            ],
+            "aliases": [
+                "project index",
+                "índice",
+                ".project",
+                "catalog"
+            ]
+        },
+        {
+            "id": "user-identity",
+            "type": "feature",
+            "name": "User Identity",
+            "summary": "Modelo User con verificación de correo, 2FA, roles y activity log.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "roles-permissions",
+                "activity-logging"
+            ],
+            "entrypoints": [
+                "app/Models/User.php",
+                "database/factories/UserFactory.php"
+            ],
+            "aliases": [
+                "user",
+                "usuario",
+                "modelo user"
+            ]
+        },
+        {
+            "id": "login",
+            "type": "feature",
+            "name": "Login",
+            "summary": "Inicio de sesión Fortify y cierre de sesión Livewire.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "user-identity",
+                "auth-layout"
+            ],
+            "entrypoints": [
+                "resources/views/pages/auth/login.blade.php",
+                "app/Livewire/Actions/Logout.php",
+                "tests/Feature/Auth/AuthenticationTest.php"
+            ],
+            "aliases": [
+                "iniciar sesión",
+                "sign in",
+                "logout"
+            ]
+        },
+        {
+            "id": "registration",
+            "type": "feature",
+            "name": "Registration",
+            "summary": "Alta de usuarios vía Fortify CreateNewUser y reglas de perfil.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "user-identity"
+            ],
+            "entrypoints": [
+                "app/Actions/Fortify/CreateNewUser.php",
+                "resources/views/pages/auth/register.blade.php"
+            ],
+            "aliases": [
+                "registro",
+                "sign up",
+                "crear usuario"
+            ]
+        },
+        {
+            "id": "password-recovery",
+            "type": "feature",
+            "name": "Password Recovery",
+            "summary": "Recuperación y restablecimiento de contraseña Fortify.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "user-identity"
+            ],
+            "entrypoints": [
+                "app/Actions/Fortify/ResetUserPassword.php",
+                "resources/views/pages/auth/forgot-password.blade.php"
+            ],
+            "aliases": [
+                "forgot password",
+                "reset password",
+                "contraseña"
+            ]
+        },
+        {
+            "id": "email-verification",
+            "type": "feature",
+            "name": "Email Verification",
+            "summary": "Verificación de correo exigida en rutas privadas.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "user-identity"
+            ],
+            "entrypoints": [
+                "resources/views/pages/auth/verify-email.blade.php",
+                "routes/web.php",
+                "tests/Feature/Auth/EmailVerificationTest.php"
+            ],
+            "aliases": [
+                "verify email",
+                "verificar correo"
+            ]
+        },
+        {
+            "id": "two-factor-auth",
+            "type": "feature",
+            "name": "Two Factor Auth",
+            "summary": "Desafío y configuración 2FA preparados por el starter kit.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "user-identity"
+            ],
+            "entrypoints": [
+                "resources/views/pages/auth/two-factor-challenge.blade.php",
+                "tests/Feature/Auth/TwoFactorChallengeTest.php"
+            ],
+            "aliases": [
+                "2fa",
+                "two factor",
+                "doble factor"
+            ]
+        },
+        {
+            "id": "passkeys",
+            "type": "feature",
+            "name": "Passkeys",
+            "summary": "Componentes y assets de autenticación con passkeys.",
+            "status": "implemented",
+            "parent": "authentication",
+            "children": [],
+            "depends_on": [
+                "login"
+            ],
+            "entrypoints": [
+                "resources/views/components/passkey-verify.blade.php",
+                "resources/js/passkeys.js"
+            ],
+            "aliases": [
+                "webauthn",
+                "passkey"
+            ]
+        },
+        {
+            "id": "profile",
+            "type": "feature",
+            "name": "Profile",
+            "summary": "Edición de perfil y eliminación de cuenta Livewire.",
+            "status": "implemented",
+            "parent": "account-settings",
+            "children": [],
+            "depends_on": [
+                "user-identity"
+            ],
+            "entrypoints": [
+                "resources/views/pages/settings/⚡profile.blade.php",
+                "tests/Feature/Settings/ProfileUpdateTest.php"
+            ],
+            "aliases": [
+                "perfil",
+                "delete account"
+            ]
+        },
+        {
+            "id": "appearance",
+            "type": "feature",
+            "name": "Appearance",
+            "summary": "Preferencia de apariencia de la interfaz.",
+            "status": "implemented",
+            "parent": "account-settings",
+            "children": [],
+            "depends_on": [
+                "ui-shell"
+            ],
+            "entrypoints": [
+                "resources/views/pages/settings/⚡appearance.blade.php"
+            ],
+            "aliases": [
+                "tema",
+                "dark mode",
+                "apariencia"
+            ]
+        },
+        {
+            "id": "security-settings",
+            "type": "feature",
+            "name": "Security Settings",
+            "summary": "Cambio de contraseña y gestión 2FA en settings.",
+            "status": "implemented",
+            "parent": "account-settings",
+            "children": [],
+            "depends_on": [
+                "password-recovery",
+                "two-factor-auth"
+            ],
+            "entrypoints": [
+                "resources/views/pages/settings/⚡security.blade.php",
+                "tests/Feature/Settings/SecurityTest.php"
+            ],
+            "aliases": [
+                "seguridad",
+                "password update"
+            ]
+        },
+        {
+            "id": "organization-context",
+            "type": "feature",
+            "name": "Organization Context",
+            "summary": "Contexto de organización activa en sesión sincronizado con Spatie teams.",
+            "status": "implemented",
+            "parent": "tenancy",
+            "children": [],
+            "depends_on": [
+                "roles-permissions"
+            ],
+            "entrypoints": [
+                "app/Support/Tenancy/OrganizationContext.php",
+                "app/Http/Middleware/SetOrganizationContext.php",
+                "bootstrap/app.php"
+            ],
+            "aliases": [
+                "active organization",
+                "organización activa",
+                "organizacion activa",
+                "setPermissionsTeamId",
+                "organización",
+                "contexto organizacional"
+            ]
+        },
+        {
+            "id": "roles-permissions",
+            "type": "feature",
+            "name": "Roles and Permissions",
+            "summary": "Configuración Spatie Permission con organization_id como team key para roles globales y por organización.",
+            "status": "implemented",
+            "parent": "authorization",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "config/permission.php",
+                "app/Models/User.php"
+            ],
+            "aliases": [
+                "HasRoles",
+                "permission teams",
+                "roles",
+                "organización",
+                "organization_id",
+                "permisos organizacionales"
+            ]
+        },
+        {
+            "id": "activity-logging",
+            "type": "feature",
+            "name": "Activity Logging",
+            "summary": "Registro de cambios relevantes con Spatie Activitylog v5.",
+            "status": "implemented",
+            "parent": "audit",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "config/activitylog.php",
+                "app/Models/User.php"
+            ],
+            "aliases": [
+                "LogsActivity",
+                "activity_log"
+            ]
+        },
+        {
+            "id": "app-layout",
+            "type": "feature",
+            "name": "App Layout",
+            "summary": "Shell autenticado con sidebar, header móvil y menú de usuario.",
+            "status": "implemented",
+            "parent": "ui-shell",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "resources/views/layouts/app/sidebar.blade.php",
+                "resources/views/layouts/app.blade.php"
+            ],
+            "aliases": [
+                "sidebar",
+                "navegación",
+                "app shell"
+            ]
+        },
+        {
+            "id": "auth-layout",
+            "type": "feature",
+            "name": "Auth Layout",
+            "summary": "Layouts de autenticación con identidad visual FESC.",
+            "status": "implemented",
+            "parent": "ui-shell",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "resources/views/layouts/auth.blade.php",
+                "resources/views/layouts/auth/split.blade.php"
+            ],
+            "aliases": [
+                "login layout",
+                "split auth"
+            ]
+        },
+        {
+            "id": "dashboard-home",
+            "type": "feature",
+            "name": "Dashboard Home",
+            "summary": "Página de inicio autenticada y welcome pública.",
+            "status": "implemented",
+            "parent": "ui-shell",
+            "children": [],
+            "depends_on": [
+                "app-layout",
+                "authentication"
+            ],
+            "entrypoints": [
+                "resources/views/dashboard.blade.php",
+                "routes/web.php",
+                "tests/Feature/DashboardTest.php"
+            ],
+            "aliases": [
+                "dashboard",
+                "inicio",
+                "home",
+                "welcome"
+            ]
+        },
+        {
+            "id": "bootstrap-routing",
+            "type": "feature",
+            "name": "Bootstrap and Routing",
+            "summary": "Arranque Laravel, middleware aliases y providers de aplicación.",
+            "status": "implemented",
+            "parent": "infrastructure",
+            "children": [],
+            "depends_on": [
+                "organization-context"
+            ],
+            "entrypoints": [
+                "bootstrap/app.php",
+                "app/Providers/AppServiceProvider.php",
+                "routes/web.php"
+            ],
+            "aliases": [
+                "bootstrap",
+                "middleware",
+                "providers",
+                "routing",
+                "organización middleware",
+                "SetOrganizationContext"
+            ]
+        },
+        {
+            "id": "docker-runtime",
+            "type": "feature",
+            "name": "Docker Runtime",
+            "summary": "Compose de app PHP 8.4 y MariaDB 11.6 con volúmenes persistentes.",
+            "status": "implemented",
+            "parent": "infrastructure",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "docker-compose.yml",
+                "docker/php/Dockerfile"
+            ],
+            "aliases": [
+                "docker",
+                "mariadb",
+                "compose"
+            ]
+        },
+        {
+            "id": "frontend-assets",
+            "type": "feature",
+            "name": "Frontend Assets",
+            "summary": "Vite, Tailwind, CSS de marca y JS de la aplicación.",
+            "status": "implemented",
+            "parent": "infrastructure",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "vite.config.js",
+                "resources/css/app.css",
+                "package.json"
+            ],
+            "aliases": [
+                "vite",
+                "tailwind",
+                "css",
+                "assets"
+            ]
+        },
+        {
+            "id": "database-foundation",
+            "type": "feature",
+            "name": "Database Foundation",
+            "summary": "Migraciones base Laravel (users, cache, jobs) y seeder.",
+            "status": "implemented",
+            "parent": "infrastructure",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "config/database.php",
+                "database/seeders/DatabaseSeeder.php"
+            ],
+            "aliases": [
+                "migrations",
+                "mariadb schema",
+                "jobs",
+                "cache"
+            ]
+        },
+        {
+            "id": "project-index",
+            "type": "feature",
+            "name": "Project Index",
+            "summary": "Generación y consulta del índice conceptual en .project/.",
+            "status": "implemented",
+            "parent": "project-intelligence",
+            "children": [
+                "project-index-engine"
+            ],
+            "depends_on": [],
+            "entrypoints": [
+                "app/Support/ProjectIndex/Catalog.php",
+                "app/Support/ProjectIndex/Indexer.php",
+                "app/Support/ProjectIndex/IndexQuery.php",
+                "app/Console/Commands/ProjectQueryCommand.php"
+            ],
+            "aliases": [
+                "project:index",
+                "project:query",
+                "relevant",
+                "stale"
+            ]
+        },
+        {
+            "id": "project-index-engine",
+            "type": "service",
+            "name": "Project Index Engine",
+            "summary": "Indexer, store, scanner de imports PHP y consultas del índice.",
+            "status": "implemented",
+            "parent": "project-index",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "app/Support/ProjectIndex/Indexer.php",
+                "app/Support/ProjectIndex/IndexQuery.php",
+                "app/Support/ProjectIndex/PhpImportScanner.php"
+            ],
+            "aliases": [
+                "Indexer",
+                "IndexStore",
+                "PhpImportScanner",
+                "IndexQuery"
+            ]
+        },
+        {
+            "id": "architecture-docs",
+            "type": "documentation",
+            "name": "Architecture Docs",
+            "summary": "Documentos de arquitectura, multiempresa, dependencias y guías.",
+            "status": "implemented",
+            "parent": "documentation",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "docs/ARCHITECTURE.md",
+                "docs/MULTITENANCY.md",
+                "docs/DEVELOPMENT_GUIDELINES.md"
+            ],
+            "aliases": [
+                "ARCHITECTURE",
+                "MULTITENANCY",
+                "DEPENDENCIES",
+                "organización",
+                "multiempresa",
+                "tenancy docs"
+            ]
+        },
+        {
+            "id": "test-suite",
+            "type": "test",
+            "name": "Test Suite",
+            "summary": "Pruebas Pest unitarias y de feature del repositorio.",
+            "status": "implemented",
+            "parent": "testing",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "tests/Pest.php",
+                "tests/TestCase.php"
+            ],
+            "aliases": [
+                "pest suite",
+                "feature tests",
+                "unit tests"
+            ]
+        },
+        {
+            "id": "app-config",
+            "type": "configuration",
+            "name": "Application Config",
+            "summary": "Archivos de configuración Laravel no cubiertos por features específicas.",
+            "status": "implemented",
+            "parent": "infrastructure",
+            "children": [],
+            "depends_on": [],
+            "entrypoints": [
+                "config/app.php",
+                ".env.example"
+            ],
+            "aliases": [
+                "config",
+                "env example"
+            ]
+        },
+        {
+            "id": "ui-misc-components",
+            "type": "feature",
+            "name": "UI Misc Components",
+            "summary": "Iconos Flux, partials y componentes auxiliares de la UI.",
+            "status": "implemented",
+            "parent": "ui-shell",
+            "children": [],
+            "depends_on": [
+                "app-layout"
+            ],
+            "entrypoints": [
+                "resources/views/pages/settings/layout.blade.php",
+                "resources/views/partials/settings-heading.blade.php"
+            ],
+            "aliases": [
+                "flux icons",
+                "partials",
+                "placeholder"
+            ]
+        }
+    ],
+    "physical": {
+        "./": [
+            "app-config",
+            "architecture-docs",
+            "docker-runtime",
+            "documentation",
+            "fesc-security-insights",
+            "frontend-assets",
+            "infrastructure",
+            "test-suite",
+            "testing"
+        ],
+        ".cursor/rules/": [
+            "project-index"
+        ],
+        "app/Actions/Fortify/": [
+            "authentication",
+            "password-recovery",
+            "registration"
+        ],
+        "app/Concerns/": [
+            "password-recovery",
+            "registration"
+        ],
+        "app/Console/Commands/": [
+            "project-index",
+            "project-intelligence"
+        ],
+        "app/Http/Controllers/": [
+            "bootstrap-routing"
+        ],
+        "app/Http/Middleware/": [
+            "organization-context",
+            "tenancy"
+        ],
+        "app/Livewire/Actions/": [
+            "login"
+        ],
+        "app/Models/": [
+            "user-identity"
+        ],
+        "app/Modules/": [
+            "architecture-docs",
+            "documentation"
+        ],
+        "app/Providers/": [
+            "authentication",
+            "bootstrap-routing",
+            "infrastructure"
+        ],
+        "app/Support/ProjectIndex/": [
+            "project-index",
+            "project-index-engine",
+            "project-intelligence"
+        ],
+        "app/Support/Tenancy/": [
+            "organization-context",
+            "tenancy"
+        ],
+        "bootstrap/": [
+            "bootstrap-routing",
+            "infrastructure"
+        ],
+        "config/": [
+            "activity-logging",
+            "app-config",
+            "audit",
+            "authentication",
+            "authorization",
+            "database-foundation",
+            "roles-permissions"
+        ],
+        "database/factories/": [
+            "user-identity"
+        ],
+        "database/migrations/": [
+            "activity-logging",
+            "audit",
+            "authorization",
+            "database-foundation",
+            "passkeys",
+            "roles-permissions",
+            "user-identity"
+        ],
+        "database/seeders/": [
+            "database-foundation"
+        ],
+        "docker/php/": [
+            "docker-runtime",
+            "infrastructure"
+        ],
+        "docs/": [
+            "architecture-docs",
+            "documentation",
+            "organization-context",
+            "tenancy"
+        ],
+        "lang/": [
+            "frontend-assets"
+        ],
+        "resources/css/": [
+            "frontend-assets",
+            "ui-shell"
+        ],
+        "resources/js/": [
+            "frontend-assets",
+            "passkeys"
+        ],
+        "resources/views/": [
+            "dashboard-home"
+        ],
+        "resources/views/components/": [
+            "app-layout",
+            "auth-layout",
+            "passkeys",
+            "ui-misc-components",
+            "ui-shell"
+        ],
+        "resources/views/flux/icon/": [
+            "ui-misc-components"
+        ],
+        "resources/views/flux/navlist/": [
+            "ui-misc-components"
+        ],
+        "resources/views/layouts/": [
+            "app-layout",
+            "auth-layout",
+            "ui-shell"
+        ],
+        "resources/views/layouts/app/": [
+            "app-layout",
+            "ui-shell"
+        ],
+        "resources/views/layouts/auth/": [
+            "auth-layout",
+            "ui-shell"
+        ],
+        "resources/views/pages/auth/": [
+            "authentication",
+            "email-verification",
+            "login",
+            "password-recovery",
+            "registration",
+            "two-factor-auth"
+        ],
+        "resources/views/pages/settings/": [
+            "account-settings",
+            "appearance",
+            "profile",
+            "security-settings",
+            "two-factor-auth",
+            "ui-misc-components"
+        ],
+        "resources/views/pages/settings/two-factor/": [
+            "account-settings",
+            "two-factor-auth"
+        ],
+        "resources/views/partials/": [
+            "app-layout",
+            "ui-misc-components"
+        ],
+        "routes/": [
+            "account-settings",
+            "bootstrap-routing",
+            "dashboard-home",
+            "email-verification"
+        ],
+        "tests/": [
+            "test-suite",
+            "testing"
+        ],
+        "tests/Feature/": [
+            "dashboard-home",
+            "test-suite",
+            "testing"
+        ],
+        "tests/Feature/Auth/": [
+            "email-verification",
+            "login",
+            "password-recovery",
+            "registration",
+            "test-suite",
+            "testing",
+            "two-factor-auth"
+        ],
+        "tests/Feature/ProjectIndex/": [
+            "project-index",
+            "test-suite",
+            "testing"
+        ],
+        "tests/Feature/Settings/": [
+            "profile",
+            "security-settings",
+            "test-suite",
+            "testing"
+        ],
+        "tests/Unit/": [
+            "test-suite",
+            "testing"
+        ],
+        "tests/Unit/ProjectIndex/": [
+            "project-index",
+            "test-suite",
+            "testing"
+        ]
+    }
+}
