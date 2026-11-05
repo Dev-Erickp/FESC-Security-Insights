@@ -1,0 +1,80 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: fesc-security-insights-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      DB_CONNECTION: mariadb
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-fesc_security_insights}
+      DB_USERNAME: ${DB_USERNAME:-fesc}
+      DB_PASSWORD: ${DB_PASSWORD:-secret}
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      - fesc
+
+  mariadb:
+    image: mariadb:11.6
+    container_name: fesc-security-insights-mariadb
+    restart: unless-stopped
+    ports:
+      - "${FORWARD_DB_PORT:-3306}:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-fesc_security_insights}
+      MYSQL_USER: ${DB_USERNAME:-fesc}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - fesc-mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks:
+      - fesc
+
+  # Planned for later stages (documented, not started by default):
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "${FORWARD_REDIS_PORT:-6379}:6379"
+  #   volumes:
+  #     - fesc-redis-data:/data
+  #   networks:
+  #     - fesc
+  #
+  # minio:
+  #   image: minio/minio:latest
+  #   command: server /data --console-address ":9001"
+  #   ports:
+  #     - "${FORWARD_MINIO_PORT:-9000}:9000"
+  #     - "${FORWARD_MINIO_CONSOLE_PORT:-9001}:9001"
+  #   environment:
+  #     MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minio}
+  #     MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-miniosecret}
+  #   volumes:
+  #     - fesc-minio-data:/data
+  #   networks:
+  #     - fesc
+
+networks:
+  fesc:
+    driver: bridge
+
+volumes:
+  fesc-mariadb-data:
+    driver: local
