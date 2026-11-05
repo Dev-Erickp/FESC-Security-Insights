@@ -29,13 +29,14 @@ yarn-error.log
 /.cursor/*
 !/.cursor/rules/
 !/.cursor/rules/**
+!/.cursor/skills/
+!/.cursor/skills/**
 /.factory
 /.grok
 /.junie
 /.kiro
 /.pi
 /.mcp.json
-/AGENTS.md
 /CLAUDE.md
 /boost.json
 /opencode.json

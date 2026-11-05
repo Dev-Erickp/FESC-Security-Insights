@@ -88,21 +88,28 @@ php artisan test
 npm run build
 ```
 
-## Project Intelligence Index
+## Agentes de IA
 
-Índice conceptual local en [`.project/`](.project/) para orientar qué leer (no qué es verdad).
+Punto de entrada: [`AGENTS.md`](AGENTS.md).
 
 ```bash
 php artisan project:query relevant --q="organización activa"
-php artisan project:query context organization-context
+php artisan project:map
 php artisan project:index --check
-composer index
 ```
 
-Ver [`.project/README.md`](.project/README.md). Catálogo mantenido: `app/Support/ProjectIndex/Catalog.php`.
+Contexto: [`docs/AI/`](docs/AI/). Skills: [`.cursor/skills/`](.cursor/skills/). Git Flow: [`docs/AI/GIT_WORKFLOW.md`](docs/AI/GIT_WORKFLOW.md).
+
+**Regla:** un requerimiento, una rama, un PR, validación `develop → qa → main`.
+
+## Project Intelligence Index
+
+Índice conceptual en [`.project/`](.project/) (qué leer, no qué es verdad). Catálogo: `app/Support/ProjectIndex/Catalog.php`.
 
 ## Documentación
 
+- [`AGENTS.md`](AGENTS.md)
+- [`docs/AI/`](docs/AI/) (contexto permanente para agentes)
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 - [`docs/DEPENDENCIES.md`](docs/DEPENDENCIES.md)
 - [`docs/MULTITENANCY.md`](docs/MULTITENANCY.md)

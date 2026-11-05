@@ -1,0 +1,27 @@
+---
+description: Flujo obligatorio de contextualización, Git Flow y lectura para agentes FESC
+alwaysApply: true
+---
+
+# FESC Agent Workflow
+
+## Antes de modificar código
+
+1. Leer `AGENTS.md`.
+2. Leer `docs/AI/PROJECT_CONTEXT.md`, `ARCHITECTURE_MAP.md`, `WORK_TREE.md`, `GIT_WORKFLOW.md`.
+3. Consultar índice: `php artisan project:query relevant --q="<tarea>"` y luego leer entrypoints.
+4. Confirmar `FSI-XXX`, módulo y rama `<tipo>/FSI-XXX-descripcion` desde `develop`.
+5. No inventar módulos/migraciones/features no existentes.
+
+## Git (duro)
+
+- Nunca desarrollar en `main`, `qa` o `develop`.
+- Un requerimiento = una rama = un PR hacia `develop`.
+- Sin autorización explícita: no commit, push, PR, merge ni delete.
+- Si no hay rama de requerimiento, prepararla (o informar bloqueo) antes de editar.
+
+## Tokens
+
+- No leer el repo completo.
+- Preferir mapas + `project:query` + archivos relevantes.
+- Actualizar solo docs afectados por el cambio.

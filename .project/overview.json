@@ -241,13 +241,19 @@
             "id": "project-intelligence",
             "type": "domain",
             "name": "Project Intelligence",
-            "summary": "Índice conceptual local para orientar lectura de agentes.",
+            "summary": "Índice conceptual, mapas AI y skills de agentes.",
             "children": [
                 {
                     "id": "project-index",
                     "type": "feature",
                     "name": "Project Index",
                     "summary": "Generación y consulta del índice conceptual en .project/."
+                },
+                {
+                    "id": "ai-agent-ecosystem",
+                    "type": "feature",
+                    "name": "AI Agent Ecosystem",
+                    "summary": "Contexto permanente, skills de proyecto, Git Flow docs y registro FSI."
                 }
             ]
         }

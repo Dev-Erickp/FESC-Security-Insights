@@ -30,6 +30,29 @@
         ],
         "tests": []
     },
+    "ai-agent-ecosystem": {
+        "entrypoints": [
+            "AGENTS.md",
+            "docs/AI/GIT_WORKFLOW.md",
+            "docs/AI/SKILLS_REGISTRY.md",
+            "docs/AI/WORK_TREE.md"
+        ],
+        "dirs": [],
+        "files": [
+            ".cursor/rules/fesc-agent-workflow.mdc",
+            "docs/AI/ARCHITECTURE_MAP.md",
+            "docs/AI/CHANGELOG.md",
+            "docs/AI/CODEBASE_MAP.md",
+            "docs/AI/DECISIONS.md",
+            "docs/AI/DEVELOPMENT_WORKFLOW.md",
+            "docs/AI/GIT_WORKFLOW.md",
+            "docs/AI/PROJECT_CONTEXT.md",
+            "docs/AI/SKILLS_REGISTRY.md",
+            "docs/AI/WORK_ITEMS.md",
+            "docs/AI/WORK_TREE.md"
+        ],
+        "tests": []
+    },
     "app-config": {
         "entrypoints": [
             "config/app.php",
@@ -82,12 +105,22 @@
         "entrypoints": [
             "docs/ARCHITECTURE.md",
             "docs/MULTITENANCY.md",
-            "docs/DEVELOPMENT_GUIDELINES.md"
+            "AGENTS.md"
         ],
         "dirs": [],
         "files": [
             "README.md",
             "app/Modules/README.md",
+            "docs/AI/ARCHITECTURE_MAP.md",
+            "docs/AI/CHANGELOG.md",
+            "docs/AI/CODEBASE_MAP.md",
+            "docs/AI/DECISIONS.md",
+            "docs/AI/DEVELOPMENT_WORKFLOW.md",
+            "docs/AI/GIT_WORKFLOW.md",
+            "docs/AI/PROJECT_CONTEXT.md",
+            "docs/AI/SKILLS_REGISTRY.md",
+            "docs/AI/WORK_ITEMS.md",
+            "docs/AI/WORK_TREE.md",
             "docs/ARCHITECTURE.md",
             "docs/DEPENDENCIES.md",
             "docs/DEVELOPMENT_GUIDELINES.md",
@@ -230,6 +263,16 @@
         "files": [
             "README.md",
             "app/Modules/README.md",
+            "docs/AI/ARCHITECTURE_MAP.md",
+            "docs/AI/CHANGELOG.md",
+            "docs/AI/CODEBASE_MAP.md",
+            "docs/AI/DECISIONS.md",
+            "docs/AI/DEVELOPMENT_WORKFLOW.md",
+            "docs/AI/GIT_WORKFLOW.md",
+            "docs/AI/PROJECT_CONTEXT.md",
+            "docs/AI/SKILLS_REGISTRY.md",
+            "docs/AI/WORK_ITEMS.md",
+            "docs/AI/WORK_TREE.md",
             "docs/ARCHITECTURE.md",
             "docs/DEPENDENCIES.md",
             "docs/DEVELOPMENT_GUIDELINES.md",
@@ -389,6 +432,7 @@
             "app/Console/Commands/ProjectIndexCommand.php",
             "app/Console/Commands/ProjectQueryCommand.php",
             "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/CodebaseMapper.php",
             "app/Support/ProjectIndex/GitHookInstaller.php",
             "app/Support/ProjectIndex/IndexQuery.php",
             "app/Support/ProjectIndex/IndexStore.php",
@@ -397,6 +441,7 @@
         ],
         "tests": [
             "tests/Feature/ProjectIndex/ProjectIndexCommandsTest.php",
+            "tests/Feature/ProjectIndex/ProjectMapCommandTest.php",
             "tests/Unit/ProjectIndex/IndexerTest.php",
             "tests/Unit/ProjectIndex/PhpImportScannerTest.php"
         ]
@@ -405,11 +450,13 @@
         "entrypoints": [
             "app/Support/ProjectIndex/Indexer.php",
             "app/Support/ProjectIndex/IndexQuery.php",
-            "app/Support/ProjectIndex/PhpImportScanner.php"
+            "app/Support/ProjectIndex/CodebaseMapper.php"
         ],
         "dirs": [],
         "files": [
+            "app/Console/Commands/ProjectMapCommand.php",
             "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/CodebaseMapper.php",
             "app/Support/ProjectIndex/GitHookInstaller.php",
             "app/Support/ProjectIndex/IndexQuery.php",
             "app/Support/ProjectIndex/IndexStore.php",
@@ -420,19 +467,34 @@
     },
     "project-intelligence": {
         "entrypoints": [
+            "AGENTS.md",
             "app/Support/ProjectIndex/Catalog.php",
             ".project/README.md"
         ],
         "dirs": [],
         "files": [
+            ".cursor/rules/fesc-agent-workflow.mdc",
+            ".cursor/rules/project-intelligence.mdc",
             "app/Console/Commands/ProjectIndexCommand.php",
+            "app/Console/Commands/ProjectMapCommand.php",
             "app/Console/Commands/ProjectQueryCommand.php",
             "app/Support/ProjectIndex/Catalog.php",
+            "app/Support/ProjectIndex/CodebaseMapper.php",
             "app/Support/ProjectIndex/GitHookInstaller.php",
             "app/Support/ProjectIndex/IndexQuery.php",
             "app/Support/ProjectIndex/IndexStore.php",
             "app/Support/ProjectIndex/Indexer.php",
-            "app/Support/ProjectIndex/PhpImportScanner.php"
+            "app/Support/ProjectIndex/PhpImportScanner.php",
+            "docs/AI/ARCHITECTURE_MAP.md",
+            "docs/AI/CHANGELOG.md",
+            "docs/AI/CODEBASE_MAP.md",
+            "docs/AI/DECISIONS.md",
+            "docs/AI/DEVELOPMENT_WORKFLOW.md",
+            "docs/AI/GIT_WORKFLOW.md",
+            "docs/AI/PROJECT_CONTEXT.md",
+            "docs/AI/SKILLS_REGISTRY.md",
+            "docs/AI/WORK_ITEMS.md",
+            "docs/AI/WORK_TREE.md"
         ],
         "tests": []
     },
@@ -508,6 +570,7 @@
             "tests/Feature/DashboardTest.php",
             "tests/Feature/ExampleTest.php",
             "tests/Feature/ProjectIndex/ProjectIndexCommandsTest.php",
+            "tests/Feature/ProjectIndex/ProjectMapCommandTest.php",
             "tests/Feature/Settings/ProfileUpdateTest.php",
             "tests/Feature/Settings/SecurityTest.php",
             "tests/Pest.php",
@@ -536,6 +599,7 @@
             "tests/Feature/DashboardTest.php",
             "tests/Feature/ExampleTest.php",
             "tests/Feature/ProjectIndex/ProjectIndexCommandsTest.php",
+            "tests/Feature/ProjectIndex/ProjectMapCommandTest.php",
             "tests/Feature/Settings/ProfileUpdateTest.php",
             "tests/Feature/Settings/SecurityTest.php",
             "tests/Pest.php",

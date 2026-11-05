@@ -259,14 +259,16 @@
             "id": "project-intelligence",
             "type": "domain",
             "name": "Project Intelligence",
-            "summary": "Índice conceptual local para orientar lectura de agentes.",
+            "summary": "Índice conceptual, mapas AI y skills de agentes.",
             "status": "implemented",
             "parent": "fesc-security-insights",
             "children": [
+                "ai-agent-ecosystem",
                 "project-index"
             ],
             "depends_on": [],
             "entrypoints": [
+                "AGENTS.md",
                 "app/Support/ProjectIndex/Catalog.php",
                 ".project/README.md"
             ],
@@ -274,7 +276,9 @@
                 "project index",
                 "índice",
                 ".project",
-                "catalog"
+                "catalog",
+                "AGENTS",
+                "skills"
             ]
         },
         {
@@ -726,7 +730,7 @@
             "id": "project-index-engine",
             "type": "service",
             "name": "Project Index Engine",
-            "summary": "Indexer, store, scanner de imports PHP y consultas del índice.",
+            "summary": "Indexer, store, scanner, mapper y consultas del índice.",
             "status": "implemented",
             "parent": "project-index",
             "children": [],
@@ -734,13 +738,40 @@
             "entrypoints": [
                 "app/Support/ProjectIndex/Indexer.php",
                 "app/Support/ProjectIndex/IndexQuery.php",
-                "app/Support/ProjectIndex/PhpImportScanner.php"
+                "app/Support/ProjectIndex/CodebaseMapper.php"
             ],
             "aliases": [
                 "Indexer",
                 "IndexStore",
                 "PhpImportScanner",
-                "IndexQuery"
+                "IndexQuery",
+                "CodebaseMapper",
+                "project:map"
+            ]
+        },
+        {
+            "id": "ai-agent-ecosystem",
+            "type": "feature",
+            "name": "AI Agent Ecosystem",
+            "summary": "Contexto permanente, skills de proyecto, Git Flow docs y registro FSI.",
+            "status": "implemented",
+            "parent": "project-intelligence",
+            "children": [],
+            "depends_on": [
+                "project-index"
+            ],
+            "entrypoints": [
+                "AGENTS.md",
+                "docs/AI/GIT_WORKFLOW.md",
+                "docs/AI/SKILLS_REGISTRY.md",
+                "docs/AI/WORK_TREE.md"
+            ],
+            "aliases": [
+                "AGENTS",
+                "skills",
+                "git flow",
+                "work items",
+                "FSI"
             ]
         },
         {
@@ -755,7 +786,7 @@
             "entrypoints": [
                 "docs/ARCHITECTURE.md",
                 "docs/MULTITENANCY.md",
-                "docs/DEVELOPMENT_GUIDELINES.md"
+                "AGENTS.md"
             ],
             "aliases": [
                 "ARCHITECTURE",
@@ -763,7 +794,8 @@
                 "DEPENDENCIES",
                 "organización",
                 "multiempresa",
-                "tenancy docs"
+                "tenancy docs",
+                "AGENTS"
             ]
         },
         {
@@ -838,7 +870,9 @@
             "testing"
         ],
         ".cursor/rules/": [
-            "project-index"
+            "ai-agent-ecosystem",
+            "project-index",
+            "project-intelligence"
         ],
         "app/Actions/Fortify/": [
             "authentication",
@@ -851,6 +885,7 @@
         ],
         "app/Console/Commands/": [
             "project-index",
+            "project-index-engine",
             "project-intelligence"
         ],
         "app/Http/Controllers/": [
@@ -921,6 +956,12 @@
             "documentation",
             "organization-context",
             "tenancy"
+        ],
+        "docs/AI/": [
+            "ai-agent-ecosystem",
+            "architecture-docs",
+            "documentation",
+            "project-intelligence"
         ],
         "lang/": [
             "frontend-assets"

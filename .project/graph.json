@@ -190,6 +190,15 @@
             "weight": 1
         },
         {
+            "from": "ai-agent-ecosystem",
+            "to": "project-index",
+            "type": "depends_on",
+            "confidence": 1,
+            "source": "catalog",
+            "inferred": false,
+            "weight": 1
+        },
+        {
             "from": "ui-misc-components",
             "to": "app-layout",
             "type": "depends_on",
